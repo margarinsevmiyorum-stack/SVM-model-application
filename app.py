@@ -101,7 +101,11 @@ with col6:
 
 
 # Predict button
-if st.button("Predict"):n    # Convert user input to DataFrame
+if st.button("Predict"):    # Convert user input to DataFrame
+    input_df = pd.DataFrame([user_input])
+    
+    if st.button("Predict"):
+    # Convert user input to DataFrame
     input_df = pd.DataFrame([user_input])
     
     # Ensure column order matches the training data features
@@ -118,4 +122,5 @@ if st.button("Predict"):n    # Convert user input to DataFrame
     if prediction[0] == 'normal':
         st.success("The connection is predicted to be: Normal")
     else:
-        st.warning("The connection is predicted to be: Anomaly (Intrusion Detected!)")
+        st.warning("The connection is predicted to be: Anomaly (Intrusion Detected!)")  
+       
